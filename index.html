@@ -8,21 +8,21 @@
         function add() {
             let a = eval(document.getElementById("firstnum").value);
             let b = eval(document.getElementById("secondnum").value);
-            let c = (parseFloat(a) + parseFloat(b)).toPrecision(2);
+            let c = parseFloat(a) + parseFloat(b);
             alert(c);
         }
 
         function subtract() {
             let a = eval(document.getElementById("firstnum").value);
             let b = eval(document.getElementById("secondnum").value);
-            let c = (a - b).toPrecision(2);
+            let c = a - b;
             alert(c);
         }
 
         function multiplicate() {
             let a = eval(document.getElementById("firstnum").value);
             let b = eval(document.getElementById("secondnum").value);
-            let c = (a * b).toPrecision(2);
+            let c = a * b;
             alert(c);
         }
 
@@ -32,7 +32,7 @@
             if (b == 0) {
                 alert("Помилка: ділення на 0");
             } else {
-                let c = (a / b).toPrecision(2);
+                let c = a / b;
                 alert(c);
             }
         }
@@ -40,7 +40,7 @@
         function percent() {
             let a = eval(document.getElementById("firstnum").value);
             let b = eval(document.getElementById("secondnum").value);
-            let c = (a * b / 100).toPrecision(2);
+            let c = a * b / 100;
             alert(c);
         }
 
@@ -50,7 +50,7 @@
             if (b == 0) {
                 alert("Помилка: ділення на 0");
             } else {
-                let c = (a * 100 / b).toPrecision(2);
+                let c = a * 100 / b;
                 alert(c);
             };
         }
