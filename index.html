@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -6,55 +6,85 @@
     <title>FunCalc</title>
     <script>
         function add() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            let c = parseFloat(a) + parseFloat(b);
-            alert(c);
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                let c = parseFloat(a) + parseFloat(b);
+                alert(c);
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
+            }
         }
 
         function subtract() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            let c = a - b;
-            alert(c);
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                let c = a - b;
+                alert(c);
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
+            }
         }
 
         function multiplicate() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            let c = a * b;
-            alert(c);
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                let c = a * b;
+                alert(c);
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
+            }
         }
 
         function divide() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            if (b == 0) {
-                alert("Помилка: ділення на 0");
-            } else {
-                let c = a / b;
-                alert(c);
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                if (b == 0) {
+                    alert("Помилка: ділення на 0");
+                } else {
+                    let c = a / b;
+                    alert(c);
+                }
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
             }
         }
 
         function percent() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            let c = a * b / 100;
-            alert(c);
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                let c = a * b / 100;
+                alert(c);
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
+            }
         }
 
         function numcent() {
-            let a = eval(document.getElementById("firstnum").value);
-            let b = eval(document.getElementById("secondnum").value);
-            if (b == 0) {
-                alert("Помилка: ділення на 0");
-            } else {
-                let c = a * 100 / b;
-                alert(c);
-            };
+            try {
+                let a = eval(document.getElementById("firstnum").value);
+                let b = eval(document.getElementById("secondnum").value);
+                if (b == 0) {
+                    alert("Помилка: ділення на 0");
+                } else {
+                    let c = a * 100 / b;
+                    alert(c);
+                }
+
+            } catch (e) {
+                alert("Помилка: некоректні дані")
+            }
         }
-    </script> 
+    </script>
 </head>
 <body>
     <h1>FunCalc</h1>
