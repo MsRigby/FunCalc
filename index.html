@@ -15,7 +15,7 @@
         function add() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -31,7 +31,7 @@
         function subtract() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -47,7 +47,7 @@
         function multiplicate() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -63,7 +63,7 @@
         function divide() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -81,7 +81,7 @@
         function percent() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -97,7 +97,7 @@
         function numcent() {
             document.getElementById('firstnumError').textContent = '';
             document.getElementById('secondnumError').textContent = '';
-            const numex = /^[\-]*+\d+(\.\d+)?$/;
+            const numex = /^[+-]?\d+(\.\d+)?$/;
             let a = document.getElementById("firstnum").value;
             let b = document.getElementById("secondnum").value;
             if (!numex.test(a)) {
@@ -114,7 +114,7 @@
 
         function calculate() {
             document.getElementById('mathexpError').textContent = '';
-            const expex = /^[\-]*+\d+(\s*[\+\-\*/]\s*\d+)*$/;
+            const expex = /^[+-]?\d+(\s*[\+\-\*/]\s*\d+)*$/;
             let result = document.getElementById("mathexp").value;
             if (!expex.test(result)) {
                 document.getElementById('mathexpError').textContent = 'Помилка: некоректні дані';
