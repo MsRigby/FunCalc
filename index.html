@@ -4,84 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FunCalc</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+
     <script>
         function add() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else {
                 let c = parseFloat(a) + parseFloat(b);
                 alert(c);
-
-            } catch (e) {
-                alert("Помилка: некоректні дані")
             }
         }
 
         function subtract() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else {
                 let c = a - b;
                 alert(c);
-
-            } catch (e) {
-                alert("Помилка: некоректні дані")
             }
         }
 
         function multiplicate() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else {
                 let c = a * b;
                 alert(c);
-
-            } catch (e) {
-                alert("Помилка: некоректні дані")
             }
         }
 
         function divide() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
-                if (b == 0) {
-                    alert("Помилка: ділення на 0");
-                } else {
-                    let c = a / b;
-                    alert(c);
-                }
-
-            } catch (e) {
-                alert("Помилка: некоректні дані")
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else if (b == 0) {
+                document.getElementById('secondnumError').textContent = "Помилка: ділення на 0";
+            } else {
+                let c = a / b;
+                alert(c);
             }
         }
 
         function percent() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else {
                 let c = a * b / 100;
                 alert(c);
-
-            } catch (e) {
-                alert("Помилка: некоректні дані")
             }
         }
 
         function numcent() {
-            try {
-                let a = eval(document.getElementById("firstnum").value);
-                let b = eval(document.getElementById("secondnum").value);
-                if (b == 0) {
-                    alert("Помилка: ділення на 0");
-                } else {
-                    let c = a * 100 / b;
-                    alert(c);
-                }
+            document.getElementById('firstnumError').textContent = '';
+            document.getElementById('secondnumError').textContent = '';
+            const numex = /^\d+(\.\d+)?$/;
+            let a = document.getElementById("firstnum").value;
+            let b = document.getElementById("secondnum").value;
+            if (!numex.test(a)) {
+                document.getElementById('firstnumError').textContent = 'Помилка: некоректні дані';
+            } else if (!numex.test(b)) {
+                document.getElementById('secondnumError').textContent = 'Помилка: некоректні дані';
+            } else if (b == 0) {
+                document.getElementById('secondnumError').textContent = "Помилка: ділення на 0";
+            } else {
+                let c = a * 100 / b;
+                alert(c);
+            }
+        }
 
-            } catch (e) {
-                alert("Помилка: некоректні дані")
+        function calculate() {
+            document.getElementById('mathexpError').textContent = '';
+            const expex = /^\d+(\s*[\+\-\*/]\s*\d+)*$/;
+            let result = document.getElementById("mathexp").value;
+            if (!expex.test(result)) {
+                document.getElementById('mathexpError').textContent = 'Помилка: некоректні дані';
+            } else {
+                result = eval(result);
+                if (result == 'Infinity') {
+                    document.getElementById('mathexpError').textContent = "Помилка: ділення на 0";
+                } else {
+                    alert(result);
+                }
             }
         }
     </script>
@@ -90,26 +133,22 @@
     <h1>FunCalc</h1>
 
     <input type="text" id="firstnum" name="firstnum" placeholder="Перше число">
-    <br><br>
+    <span id="firstnumError" class="error"></span><br><br>
 
     <input type="text" id="secondnum" name="secondnum" placeholder="Друге число">
-    <br><br>
+    <span id="secondnumError" class="error"></span><br><br>
 
     <button onclick="add()">Додати</button>
     <button onclick="subtract()">Відняти</button>
     <button onclick="multiplicate()">Помножити</button>
-    <button onclick="divide()">Поділити</button>
+    <button onclick="divide()">Поділити</button><br><br>
 
-    <p></p>
+    <button onclick="percent()">Знайти відсоток від числа (спершу вписуєте число, потім к-сть відсотків)</button><br><br>
+    <button onclick="numcent()">Знайти число за відсотком (спершу частину числа, потім к-сть відсотків)</button><br><br>
 
-    <button onclick="percent()">Знайти відсоток від числа (спершу вписуєте число, потім к-сть відсотків)</button>
+    <input type="text" id="mathexp" name="mathexp" placeholder="Математичний вираз">
+    <span id="mathexpError" class="error"></span><br><br>
 
-    <p></p>
-
-    <button onclick="numcent()">Знайти число за відсотком (спершу частину числа, потім к-сть відсотків)</button>
-
-    <p></p>
-
-
+    <button onclick="calculate()">Обчислити</button>
 </body>
 </html>
